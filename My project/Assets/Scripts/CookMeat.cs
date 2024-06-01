@@ -78,6 +78,16 @@ public class CookMeat : MonoBehaviour
         }
     }
 
+    private void OnMouseEnter() 
+    {
+        transform.position.Set(transform.localPosition.x, transform.localPosition.y + .2f , transform.localPosition.z);
+    }
+    private void OnMouseExit() 
+    {
+        transform.position.Set(transform.localPosition.x, transform.localPosition.y - .2f, transform.localPosition.z);
+    }
+    
+
     /*void ResetFillBar()
     {
         if (time >= cooked && time < overCooked)

@@ -5,8 +5,13 @@ using UnityEngine;
 public class HighlightFood : MonoBehaviour
 {
     // Start is called before the first frame update
-    
-   private void OnMouseEnter()
+    Color originalColor;
+    private void Start()
+    {
+        originalColor = GetComponent<Renderer>().material.color;
+    }
+
+    private void OnMouseEnter()
 {
     GetComponent<Renderer>().material.color = new Color(1f, 1f, 1f); // White color
     Debug.Log("Enter collider");
@@ -14,7 +19,7 @@ public class HighlightFood : MonoBehaviour
 
 private void OnMouseExit()
 {
-    GetComponent<Renderer>().material.color = new Color(94f / 255f, 94f / 255f, 94f / 255f); // Original color
+    GetComponent<Renderer>().material.color = originalColor; // Original color
     Debug.Log("Exit collider");
 }
 
