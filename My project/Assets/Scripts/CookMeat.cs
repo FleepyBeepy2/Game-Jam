@@ -59,7 +59,6 @@ public class CookMeat : MonoBehaviour
             progressBar.SetActive(false);
             fillBar.SetActive(false);
             Debug.Log("Stopped cooking meat");
-            time = 0.0f;
             if (time >= raw && time < cooked)
             {
                 stateOfMeat = COOKEDMEAT.RAW;
@@ -75,16 +74,18 @@ public class CookMeat : MonoBehaviour
                 stateOfMeat = COOKEDMEAT.OVERCOOKED;
                 Debug.Log("Meat is overcooked");
             }
+            
+            time = 0.0f;
         }
     }
 
     private void OnMouseEnter() 
     {
-        transform.position.Set(transform.localPosition.x, transform.localPosition.y + .2f , transform.localPosition.z);
+        transform.localPosition = new Vector3 (transform.localPosition.x, transform.localPosition.y + .2f, transform.localPosition.z);
     }
     private void OnMouseExit() 
     {
-        transform.position.Set(transform.localPosition.x, transform.localPosition.y - .2f, transform.localPosition.z);
+        transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y - .2f, transform.localPosition.z);
     }
     
 
