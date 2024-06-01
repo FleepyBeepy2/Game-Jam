@@ -42,7 +42,7 @@ public class CustomerOrder : MonoBehaviour
         Debug.Log("randomAmountOfToppings: " + randomAmountOfToppings);
         while (randomAmountOfToppings > 0) 
         {
-            int randomTopping = UnityEngine.Random.Range(0, randomAmountOfToppings + 1);
+            int randomTopping = UnityEngine.Random.Range(0, 6);
             order.Add(randomTopping);
             randomAmountOfToppings--;
         }
