@@ -6,6 +6,7 @@ using System.Security.Cryptography;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.AI;
+using System.Text;
 
 public class Customer : MonoBehaviour
 {
@@ -17,8 +18,10 @@ public class Customer : MonoBehaviour
     bool customerSelected = false;
     public float emissionIntensity;
     public float patience;
+    // the text object to display
+    public receipt orderDisplay;
 
-    
+
     void Start()
     {
         currentPos = 0;
@@ -49,24 +52,29 @@ public class Customer : MonoBehaviour
 
     void GenerateOrder() 
     {
-        CustomerOrder customerOrder = new CustomerOrder();
-        List<int> orderSequence = customerOrder.RandomizeOrder();
         
+         CustomerOrder customerOrder = new CustomerOrder();
+        List<int> orderSequence = customerOrder.RandomizeOrder();
+        StringBuilder orderString = new StringBuilder();
         switch (orderSequence[0])
         {
            case (int)CustomerOrder.TACO_SHELL.SOFT:
                 //Enable the image equal to the enum
                 Debug.Log("Soft Shell");
-               break;
+                // all of these in the codde append to the order string so we can display it
+                orderString.Append("Soft Shell\n");
+                break;
 
            case (int)CustomerOrder.TACO_SHELL.HARD:
                 //Enable the image equal to the enum
                 Debug.Log("Hard Shell");
+                orderString.Append("Hard Shell\n");
                 break;
 
            case (int)CustomerOrder.TACO_SHELL.CORN:
                 //Enable the image equal to the enum
                 Debug.Log("Corn Shell");
+                orderString.Append("Corn Shell\n");
                 break;
         }
         switch (orderSequence[1])
@@ -74,16 +82,19 @@ public class Customer : MonoBehaviour
             case (int)CustomerOrder.MEAT.GROUND_BEEF:
                 //Enable the image equal to the enum
                 Debug.Log("Ground Beef");
+                orderString.Append("Ground Beef\n");
                 break;
 
             case (int)CustomerOrder.MEAT.CHICKEN:
                 //Enable the image equal to the enum
                 Debug.Log("Chicken");
+                orderString.Append("Chicken\n");
                 break;
 
             case (int)CustomerOrder.MEAT.STEAK:
                 //Enable the image equal to the enum
                 Debug.Log("Steak");
+                orderString.Append("Steak\n");
                 break;
         }
         if (orderSequence.Count > 2) 
@@ -95,36 +106,45 @@ public class Customer : MonoBehaviour
                     case (int)CustomerOrder.TOPPINGS.LETTUCE:
                         //Enable the image equal to the enum
                         Debug.Log("Lettuce");
+                        orderString.Append("Lettuce\n");
                         break;
 
                     case (int)CustomerOrder.TOPPINGS.CHEESE:
                         //Enable the image equal to the enum\
                         Debug.Log("Cheese");
+                        orderString.Append("Cheese\n");
                         break;
 
                     case (int)CustomerOrder.TOPPINGS.TOMATOES:
                         //Enable the image equal to the enum
                         Debug.Log("Tomatoes");
+                        orderString.Append("Tomatoes\n");
                         break;
 
                     case (int)CustomerOrder.TOPPINGS.FAJITA_VEGGIES:
                         //Enable the image equal to the enum
                         Debug.Log("Fajita Veggies");
+                        orderString.Append("Fajita Veggies\n");
                         break;
 
                     case (int)CustomerOrder.TOPPINGS.GUAC:
                         //Enable the image equal to the enum
                         Debug.Log("Guac");
+                        orderString.Append("Guac\n");
                         break;
 
                     case (int)CustomerOrder.TOPPINGS.TACO_SAUCE:
                         //Enable the image equal to the enum
                         Debug.Log("Taco Sauce");
+                        orderString.Append("Taco Sauce\n");
                         break;
                 }
 
             }
         }
+
+        // Update the UI text with the order details
+        orderDisplay.UpdateOrderText(orderString.ToString());
 
 
     }
