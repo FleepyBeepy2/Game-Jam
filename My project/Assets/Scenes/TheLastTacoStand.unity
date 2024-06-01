@@ -5290,11 +5290,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: b80b25c8f396f7a41bcb9d182502dbf3, type: 2}
+      objectReference: {fileID: 2100000, guid: b7c1482432f310349ab17bdd1253f354, type: 2}
     - target: {fileID: 919132149155446097, guid: 99e4bab4d696dc64d8c38e36d9c01fc0,
         type: 3}
       propertyPath: m_Name
       value: Steak
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 99e4bab4d696dc64d8c38e36d9c01fc0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99e4bab4d696dc64d8c38e36d9c01fc0, type: 3}
@@ -7305,7 +7310,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 174ab1799f42af747bfad34a3fd16f4c, type: 2}
+  - {fileID: 2100000, guid: 0c4cd8a66219ec04985dd9a120680fa1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
