@@ -56,6 +56,7 @@ public class Customer : MonoBehaviour
          CustomerOrder customerOrder = new CustomerOrder();
         List<int> orderSequence = customerOrder.RandomizeOrder();
         StringBuilder orderString = new StringBuilder();
+        orderString.Append("Shell: ");
         switch (orderSequence[0])
         {
            case (int)CustomerOrder.TACO_SHELL.SOFT:
@@ -77,6 +78,7 @@ public class Customer : MonoBehaviour
                 orderString.Append("Corn Shell\n");
                 break;
         }
+        orderString.Append("Meat: ");
         switch (orderSequence[1])
         {
             case (int)CustomerOrder.MEAT.GROUND_BEEF:
@@ -99,6 +101,7 @@ public class Customer : MonoBehaviour
         }
         if (orderSequence.Count > 2) 
         {
+            orderString.Append("Toppings: ");
             for (int i = 2; i < orderSequence.Count; i++) 
             {
                 switch (orderSequence[i]) 
