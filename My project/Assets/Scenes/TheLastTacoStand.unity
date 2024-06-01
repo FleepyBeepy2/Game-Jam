@@ -1224,6 +1224,7 @@ MonoBehaviour:
   currentPos: 0
   agent: {fileID: 325703796}
   emissionIntensity: 10
+  patience: 0
 --- !u!65 &325703798
 BoxCollider:
   m_ObjectHideFlags: 0

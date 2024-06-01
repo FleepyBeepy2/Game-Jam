@@ -16,6 +16,7 @@ public class Customer : MonoBehaviour
     bool orderTaken = false;
     bool customerSelected = false;
     public float emissionIntensity;
+    public float patience;
 
     
     void Start()
@@ -32,11 +33,10 @@ public class Customer : MonoBehaviour
         {
             currentPos += 1;
             agent.SetDestination(customerPath[currentPos].position);
-            //Begin reducing the patience meter  by very little amounts as soon as they enter the line
+            
         }
         else if (currentPos == 2 && agent.remainingDistance <= .01) 
         {
-            GetComponent<BoxCollider>().enabled = true;
             if (orderTaken == true) 
             {
                 currentPos += 1;
